@@ -7,16 +7,16 @@ const registerUser = async (req,res) =>{
         const{name,email, password} = req.body;
 
         if(!name || !email || !password){
-            return res.json({sucess:false, message:'Missing Details'})
+            return res.json({success:false, message:'Missing Details'})
         }
 
         const salt = await bcrypt.genSalt(10)
-        const hasedPassword = await bcrypt.hash(password,salt)
+        const hashedPassword = await bcrypt.hash(password,salt)
 
         const userData = {
             name,
             email,
-            password: hasedPassword 
+            password: hashedPassword 
         }
         const newUser = new userModel(userData)
         const user = await newUser.save()
@@ -30,13 +30,14 @@ const registerUser = async (req,res) =>{
         res.json({success: false, message: error.message})
     }
 }
+
 const loginUser = async (req,res) => {
     try{
         const{email,password} = req.body;
         const user = await userModel.findOne({email})
 
         if(!user){
-            return res({sucess:false, message:'User does not exist'})
+            return res.json({success:false, message:'User does not exist'})
         }
 
         const isMatch = await bcrypt.compare(password, user.password)
@@ -46,11 +47,31 @@ const loginUser = async (req,res) => {
 
             res.json({success: true, token, user: {name: user.name}})
         }else{
-            return res({sucess:false, message:'Invalid credentials'})
+            return res.json({success:false, message:'Invalid credentials'})
         }
     }catch(error){
         console.log(error)
         res.json({success: false, message: error.message})
     }
 }
-export {registerUser, loginUser}
+
+const userCredits = async (req, res) => {
+    try{
+        const userId = req.userId;
+
+        const user = await userModel.findById(userId)
+        if(!user){
+            return res.join({
+                success: false,
+                message:"user not found"
+            });
+        }
+        res.json({success: true, credits: user.creditBalance, user:{name: user.name}})
+
+    }catch(error){
+        console.log(error.message)
+        res.json({success:false, message: error.message})
+    }
+}
+
+export {registerUser, loginUser, userCredits}
