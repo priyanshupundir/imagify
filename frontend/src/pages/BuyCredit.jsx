@@ -2,10 +2,34 @@ import React, { useContext } from 'react'
 import { assets, plans } from '../assets/assets'
 import { AppContext } from '../context/Appcontext'
 import { motion } from 'motion/react'
+import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 const BuyCredit = () => {
 
-  const{user} = useContext(AppContext)
+  const{user, backendURL, loadCreditsData, token, setShowLogin} = useContext(AppContext)
+
+  const navigate = useNavigate()
+  const initPay = async(order) =>{
+    
+  }
+
+  const paymentRazorpay = async(planId)=>{
+    try{
+      if(!user){
+        setShowLogin(true)
+      }
+      const {data} = await asiox.post(backendURL + '/api/user/pay-razor',{planId},{
+        Headers: {token}
+      })
+
+      if(data.success){
+        initPay(data.order)
+      }
+    }catch(error){
+      toast.error(error.message)
+    }
+  }
   return (
     <motion.div 
     initial = {{opacity:0.2, y:100}}
@@ -25,7 +49,9 @@ const BuyCredit = () => {
             <p className='mt-6'>
               <span className='text-3xl font-medium'>${item.price} </span>/ {item.credits} credits</p>
 
-              <button className='w-full bg-gray-800 text-white mt-8 text-sm rounded-md py-2.5 min-w-52'>{user ? 'Purchase' : 'Get started'}</button>
+              <button onClick={()=> paymentRazorpay(item.id)}
+              
+              className='w-full bg-gray-800 text-white mt-8 text-sm rounded-md py-2.5 min-w-52'>{user ? 'Purchase' : 'Get started'}</button>
           </div>
         ))}
       </div>
