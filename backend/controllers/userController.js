@@ -1,7 +1,7 @@
 import userModel from "../models/userModel.js";
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
-import razorpay from 'razorpay'
+import Razorpay from 'razorpay'
 
 const registerUser = async (req,res) =>{
     try{
@@ -75,7 +75,7 @@ const userCredits = async (req, res) => {
     }
 }
 
-const razorpayInstance = new razorpay({
+const RazorpayInstance = new Razorpay({
     key_id: process.env.RAZORPAY_KEY_ID,
     key_secret: process.env.RAZORPAY_KEY_SECRET,
 });
@@ -131,7 +131,7 @@ const paymentRazorPay = async(req, res) => {
             receipt: `receipt_${Date.now()}` // ✅ FIXED: Use proper receipt ID
         }
 
-        const order = await razorpayInstance.orders.create(options)
+        const order = await RazorpayInstance.orders.create(options)
         
         // ✅ FIXED: Proper response structure
         res.json({
