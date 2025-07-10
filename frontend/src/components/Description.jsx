@@ -19,8 +19,16 @@ const Description = () => {
 
         <div className='text-3xl font-medium mb-4'>
           <h2>Introducing  the Ai powered text to image generator</h2>
-          <p className='text-gray-600 mb-4'>heloo Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid, at molestiae veritatis quia quos quas error quis nostrum animi? Id et explicabo tempore cumque impedit culpa velit similique vitae nihil?</p>
-          <p className='text-gray-600'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci aliquid eaque asperiores at veniam optio libero non distinctio quas soluta, debitis, dolorum aliquam quos deleniti voluptatibus! Dignissimos autem est illo.</p>
+          <p className='text-gray-600 mb-4'>Welcome to Promptify
+                        This tool helps you create images just by describing them in words. It's powered by AI and designed to be simple and fun.
+
+                        Type what you imagine, click generate, and get an image based on your prompt.
+                        No design skills needed — just your creativity.
+
+Try it out and see what your ideas can become.</p>
+          <p className='text-gray-600'>No need for drawing or editing skills. Just think it. Type it. See it.
+
+Start exploring your creativity today.</p>
         </div>
       </div>
 
