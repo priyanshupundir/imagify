@@ -36,5 +36,5 @@ Start exploring your creativity today.</p>
     </motion.div>
   )
 }
-
+//export
 export default Description
