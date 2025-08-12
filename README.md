@@ -3,7 +3,7 @@
 imagify is a simple and powerful AI-powered text-to-image generator. Just type a few words and watch your imagination turn into stunning visuals — no design skills required.
 
 🌐 Live Demo
-https://imagify43.netlify.app/
+https://imagify2.netlify.app/
 
 ## 🚀 Features
 
