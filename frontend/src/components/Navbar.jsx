@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
 import {assets} from '../assets/assets'
 import { Link, useNavigate } from 'react-router-dom'
-import { appcontext } from '../context/appcontext'
+import { AppContext } from '../context/appcontext'
 
 const Navbar = () => {
 
-    const {user,setShowLogin, logout, credit} = useContext(appcontext)
+    const {user,setShowLogin, logout, credit} = useContext(AppContext)
 
     const navigate = useNavigate();
 
