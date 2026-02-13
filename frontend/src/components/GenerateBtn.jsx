@@ -1,7 +1,7 @@
 import React, { useContext} from 'react'
 import { assets } from '../assets/assets'
-import { motion } from 'motion/react'
-import { AppContext } from '../context/Appcontext'
+import { motion } from 'framer-motion'
+import { AppContext } from '../context/appcontext'
 import { useNavigate } from 'react-router-dom'
 
 function GenerateBtn() {
