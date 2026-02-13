@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { assets } from '../assets/assets'
-import { AppContext } from '../context/Appcontext'
+import { AppContext } from '../context/appcontext'
 import axios from 'axios'
-import { motion } from 'motion/react'
+import { motion } from 'framer-motion'
 import { toast } from 'react-toastify'
 
 const Login = () => {
