@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { assets, plans } from '../assets/assets'
-import { AppContext } from '../context/appcontext'
+import { appcontext } from '../context/appcontext'
 import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
@@ -8,7 +8,7 @@ import { toast } from 'react-toastify'
 
 const BuyCredit = () => {
 
-  const{user, backendUrl, loadCreditsData, token, setShowLogin} = useContext(AppContext)
+  const{user, backendUrl, loadCreditsData, token, setShowLogin} = useContext(appcontext)
 
   const navigate = useNavigate()
   const initPay = async(order) =>{
