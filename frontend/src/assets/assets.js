@@ -58,24 +58,24 @@ export const stepsData = [
 export const testimonialsData = [
     {
         image:profile_img_1,
-        name:'aditya',
-        role:'student',
+        name:'Aditya Kumar',
+        role:'Digital Artist',
         stars:5,
-        text:`I've been using bg.removal for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.`
+        text:`Imagify's AI image generation is mind-blowing! I can create stunning visuals in seconds instead of hours. It's perfect for my design projects and social media content!`
     },
     {
         image:profile_img_2,
         name:'Aman Negi',
-        role:'Student',
+        role:'Content Creator',
         stars:5,
-        text:`I've been using bg.removal for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.`
+        text:`I was skeptical about AI-generated images, but Imagify proved me wrong. The quality is professional-grade, and the customization options are endless. Absolutely love it!`
     },
     {
         image:profile_img_1,
         name:'Priyanshu',
-        role:' student',
+        role:'Student',
         stars:5,
-        text:`I've been using bg.removal for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.`
+        text:`As a student, this tool helps me create amazing visuals for my projects without any design skills. Imagify makes everything so easy and affordable!`
     },
 ]
 
