@@ -1,13 +1,14 @@
 import React, { useContext } from 'react'
 import { assets, plans } from '../assets/assets'
-import { AppContext } from '../context/Appcontext'
-import { motion } from 'motion/react'
+import { AppContext } from '../context/appcontext'
+import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import { toast } from 'react-toastify'
 
 const BuyCredit = () => {
 
-  const{user, backendURL, loadCreditsData, token, setShowLogin} = useContext(AppContext)
+  const{user, backendUrl, loadCreditsData, token, setShowLogin} = useContext(AppContext)
 
   const navigate = useNavigate()
   const initPay = async(order) =>{
@@ -32,8 +33,8 @@ const BuyCredit = () => {
       if(!user){
         setShowLogin(true)
       }
-      const {data} = await asiox.post(backendURL + '/api/user/pay-razor',{planId},{
-        Headers: {token}
+      const {data} = await axios.post(backendUrl + '/api/user/pay-razor',{planId},{
+        headers: {token}
       })
 
       if(data.success){
